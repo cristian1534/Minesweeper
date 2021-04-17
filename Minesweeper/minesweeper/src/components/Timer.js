@@ -19,7 +19,7 @@ export default function Timer({ gameOver, sendTime }) {
       <span role="img" aria-label="clock" style={{ paddingRight: 10 }}>
         ⏰
       </span>
-      {time}
+      {time} 😲
     </div>
   );
 }
