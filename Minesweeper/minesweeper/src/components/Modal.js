@@ -19,7 +19,7 @@ export default function Modal({ restartGame }) {
     >
       <div id="gameOverImage"></div>
       <div className="tryAgain" onClick={() => restartGame()}>
-        Play Again
+        <span>Play Again 😃</span>
       </div>
     </div>
   );

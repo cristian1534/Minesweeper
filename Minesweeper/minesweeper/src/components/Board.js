@@ -66,7 +66,7 @@ const Board = () => {
 
   return (
     <div>
-      <p>MINESWEEPER</p>
+      <p>DO NOT TOUCH THE BOMB!</p>
       <Timer />
       <div
         style={{

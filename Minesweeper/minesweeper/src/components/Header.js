@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -17,11 +18,10 @@ const Header = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto">
-                    <li className="nav-item active">
-                        <a className="nav-link" href="/">Home<span className="sr-only">(current)</span></a>
-                    </li>
                     <li className="nav-item">
-                        <button  className="btn btn-primary mt-2" href="/">Logout</button>
+                        <Link to="/register">
+                            <button  className="btn btn-primary mt-2" >Logout</button>
+                        </Link >
                     </li>
                     </ul>
                 </div>
