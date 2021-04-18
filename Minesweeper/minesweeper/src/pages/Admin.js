@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useMemo, memo } from 'react';
 import { IoTrashBinSharp } from 'react-icons/io5';
-import { db } from '../db/firebase-config';
+import { Link } from 'react-router-dom';
+import firebase from 'firebase';
+import './css/Admin.css';
 import 'firebase/auth';
-import './Back.css';
 
 
 const Admin = () => {
@@ -12,7 +13,7 @@ const Admin = () => {
     
     useEffect(() => { 
         setIsfetching(true)
-        const userComments= db.collection('Comments').onSnapshot(snap => {
+        const userComments= firebase.firestore().collection('Comments').onSnapshot(snap => {
             const data = snap.docs.map(doc => ({...doc.data(), 'id': doc.id}))
             setData(data)
             setIsfetching(false)
@@ -22,7 +23,7 @@ const Admin = () => {
     }, []);
 
     const handleDelete = ( id ) => {
-        db.collection('Comments').doc(id).delete()
+        firebase.firestore().collection('Comments').doc(id).delete()
             .then(() => {
                 console.log("Document successfully deleted!");
             }).catch((error) => {
@@ -36,14 +37,16 @@ const Admin = () => {
     const commentsList = useMemo(() => {
         return !data.length ? (
             <div className="container">
-            <h2 style={{color:'white', alignSelf: 'center'}}>{!isFetching? 'Loading comments...' : 'You do not have comments yet...'}</h2>
+            <h2 style={{color:'white', alignSelf: 'center'}}>{!isFetching? 'Loading comments...' 
+            : 'You do not have comments yet...'}</h2>
             </div>
         )
         :
         (
-            <div className="container">
-                <h2 style={{color:'white'}}>Users Comments from Data Base</h2>  
-                {
+            <div className="container">                 
+                <div>
+                        <h2 style={{color:'white'}}>Users Comments from Data Base</h2> 
+                        {
                     data.map( doc => {
                         return (
                             <div className="table" key={doc.id} >
@@ -58,28 +61,33 @@ const Admin = () => {
                                     <div className='tableDescription'>{doc.id}</div>
                                 </span>
                                 <span className='tableItem'>
-                                    <div className='tableTitle'>E-MAIL</div>
+                                    <div className='tableTitle'>E-mail</div>
                                     <div className='tableDescription'>{doc.email}</div>
+                                </span>
+                                <span className='tableItem'>
+                                    <div className='tableTitle'>Comment</div>
+                                    <div className='tableDescription'>{doc.comment}</div>
                                 </span>
                             </div>
                         )
                     })
                 }     
+                            </div>
             </div>
         )
     }, [ data ])
-
 
     return ( 
         <div>
             <div className="Container">
                 { commentsList }
             </div>
-            <button type="submit" className="btn btn-secondary logout mt-5">
+            <Link type="submit" className="btn btn-primary logout mt-5" to="/">
                 Back to Main Page
-            </button>
+            </Link>
         </div>
     );
 }
 
 export default memo(Admin);
+

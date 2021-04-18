@@ -22,7 +22,8 @@ export default function Login( props ) {
         .then(()=>{
             history.push('/Home')
             swal({
-                title:"Enjoy Minesweeper!",
+                title:"Welcome, have fun!",
+                text: "I'm Cristian Machuca, Thanks for visiting my project.",
                 icon:"success",
              
               });
@@ -85,7 +86,7 @@ export default function Login( props ) {
                     className="btn btn-success container mb-5"
                     >Send
                     </button><hr/>
-                 <p>Do you not have account? <a href="/register">Register</a></p>
+                 <p>Do you not have account? <a href="/">Register</a></p>
             </form>
         </div>
   </div>
