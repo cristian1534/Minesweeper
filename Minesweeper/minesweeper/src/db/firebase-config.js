@@ -1,3 +1,4 @@
+
 const firebaseConfig = {
     
     apiKey: "AIzaSyBHXFzvK4NUI8ljTYItdT3hvlSfemSsJ3c",
@@ -8,4 +9,5 @@ const firebaseConfig = {
     appId: "1:316741153003:web:ee67ab1e4f3a5956568eae"
   
 }
+
 export default firebaseConfig;
