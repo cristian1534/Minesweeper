@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useFirebaseApp } from 'reactfire';
+import { firebaseApp } from '../db/firebase-config';
 import { useHistory } from "react-router";
 import swal from 'sweetalert';
 import 'firebase/auth';
@@ -12,7 +12,7 @@ export default function Login( props ) {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  const firebase = useFirebaseApp();
+  const firebase = firebaseApp;
   const history = useHistory();
   
   
@@ -46,7 +46,7 @@ export default function Login( props ) {
         width="56" 
         height="56" 
         fill="currentColor" 
-        class="bi bi-key container" 
+        className="bi bi-key container" 
         viewBox="0 0 16 16">
         <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 
         .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 
@@ -64,21 +64,23 @@ export default function Login( props ) {
                     type="email" 
                     className="form-control" 
                     id="email" 
-                    placeholder="Insert your email *" 
+                    placeholder="Insert your email... *" 
                     name="email"
+                    value={ email }
                     onChange={ (e) => setEmail(e.target.value)} 
                     required />
                 </div>
                 <div className="form-group">
                     <input 
-                    type="password" 
-                    className="form-control" 
-                    id="password" 
-                    placeholder="Password minimun 6 characters...*" 
-                    name="password" 
-                    onChange={ (e) => setPassword(e.target.value)}
-                    pattern="[A-Za-z0-9!?-]{6,12}"
-                    required />
+                     type="password" 
+                     className="form-control" 
+                     id="password" 
+                     placeholder="Password minimun 6 characters...*" 
+                     name="password" 
+                     value={ password }
+                     onChange={ (e) => setPassword(e.target.value)}
+                     pattern="[A-Za-z0-9!?-]{6,12}"
+                     required />
                 </div>
                 <p>Mandatory information(*)</p>
                     <button 

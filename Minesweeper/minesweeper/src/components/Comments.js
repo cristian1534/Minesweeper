@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import firebase from 'firebase';
+import { db } from '../db/firebase-config';
 import swal from 'sweetalert';
 
 
@@ -7,7 +7,7 @@ const Comments = () => {
     const [ email, setEmail ] = useState("");
     const [ comment, setComment ] = useState("");
 
-    const db = firebase.firestore();
+
     const form = document.getElementById('form')
 
     const handleSubmit = (e) => {
@@ -34,25 +34,27 @@ const Comments = () => {
     return (
         <div>
            <form onSubmit={ handleSubmit } id="form">
-                <div class="mb-3 mt-5 ml-2">
-                        <label for="exampleFormControlInput1" class="form-label">Email address:</label>
+                <div className="mb-3 mt-5 ml-2">
+                        <label forhtml="exampleFormControlInput1" className="form-label">Email address:</label>
                         <input 
                         type="email" 
-                        class="form-control" 
-                        id="exampleFormControlInput1" 
+                        className="form-control" 
+                        id="email" 
                         placeholder="name@example.com" 
                         onChange={ (e) => setEmail(e.target.value)}
+                        value={ email }
                         required
                         />
                     </div>
-                    <div class="mb-3 ml-2">
-                        <label for="exampleFormControlTextarea1" class="form-label">Comments:</label>
+                    <div className="mb-3 ml-2">
+                        <label forhtml="exampleFormControlTextarea1" className="form-label">Comments:</label>
                         <textarea 
-                        class="form-control" 
-                        id="exampleFormControlTextarea1" 
+                        className="form-control" 
+                        id="comment" 
                         rows="3"
                         onChange={ (e) => setComment(e.target.value)}
                         required
+                        value={ comment }
                         ></textarea>
                         <button  className="btn btn-primary mt-3" type="submit">Send</button>
                  </div>
