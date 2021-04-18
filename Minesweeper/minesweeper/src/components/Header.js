@@ -19,7 +19,7 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <Link to="/register">
+                        <Link to="/">
                             <button  className="btn btn-primary mt-2" >Logout</button>
                         </Link >
                     </li>

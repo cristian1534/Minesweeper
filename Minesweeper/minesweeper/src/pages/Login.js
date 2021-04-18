@@ -20,7 +20,7 @@ export default function Login( props ) {
     e.preventDefault()
     firebase.auth().signInWithEmailAndPassword(email,password)
         .then(()=>{
-            history.push('/')
+            history.push('/Home')
             swal({
                 title:"Enjoy Minesweeper!",
                 icon:"success",
