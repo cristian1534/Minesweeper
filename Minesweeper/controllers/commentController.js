@@ -8,10 +8,23 @@ const firestore = firebase.firestore();
 const addComment = async ( req, res ) => {
     try {
         const data = req.body;
-        await firestore.collection('Comments').doc().set(data);
-        res.send('Loading...')
+        if(data.email && data.comment !== "") 
+        {
+            await firestore.collection('Comments').doc().set(data);
+            res.status(200).send({
+            success: true,
+            added: data
+            }) 
+        }else { res.status(400).send({
+            success: false,
+            error: 'Data must be complete to Post.'
+        })}
     }catch( err ) {
-        res.status(400).send( error.message )
+        res.status(400).send({
+            success: false,
+            error: err.message
+        })
+    
     }
 }
 
@@ -24,12 +37,12 @@ const getComments = async ( req, res ) => {
             res.status(400).send('No hay mensajes...')
         }else {
             data.forEach( doc => {
-                const comment = new Comment (
+                const comments = new Comment (
                     doc.id,
                     doc.data().email,
-                    doc.data().message
+                    doc.data().comment
                 );
-                commentList.push(comment);
+                commentList.push(comments);
             })
             res.json({
                 Operation: "Success",
@@ -37,7 +50,7 @@ const getComments = async ( req, res ) => {
             });
         }
     }catch( err ) {
-        res.status(400).send( err.message )
+        res.status(404)
     }
 }
 
@@ -51,8 +64,12 @@ const getComment = async (req, res ) => {
         }else {
             res.send(data.data());
         }
-    } catch (error) {
-        res.status(400).send(error.message);
+    } catch ( err ) {
+        res.status(400).send({
+            success: false,
+            error: err.message
+        })
+    
     }
 }
 
@@ -67,17 +84,25 @@ const updateComment = async ( req, res) => {
 
     }
     catch( err ) {
-        res.status(400).send( error.message )
+        res.status(400).send({
+            success: false,
+            error: err.message
+        })
+    
     }
 }
 
 const deleteComment = async (req, res ) => {
     try {
         const id = req.params.id;
-        await firestore.collection('Comments').doc(id).delete();
-        res.send('Comment was deleted successfully.');
-    } catch (error) {
-        res.status(400).send(error.message);
+        firestore.collection('Comments').doc(id).delete()
+            res.status(200).send({
+                success: true,
+                message: 'Comment deleted successfully.'
+            })   
+       
+    } catch (err ) {
+        res.status(404)
     }
 }
 

@@ -1,8 +1,8 @@
 class Comment {
-    constructor( id, email, message ){
+    constructor( id, email, comment ){
         this.id = id,
         this.email = email,
-        this.message = message
+        this.comment = comment
     }
 }
 

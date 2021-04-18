@@ -16,8 +16,9 @@ app.use(bodyParser.json());
 app.use('/api', commentRoute.routes);
 
 
-app.listen(config.port, () => 
+module.exports = app.listen(config.port, () => 
       console.log('Using Firebase... - Server on port', 
                   colors.yellow(config.port)
       )
 );
+
