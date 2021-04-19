@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useMemo, memo } from 'react';
 import { IoTrashBinSharp } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
