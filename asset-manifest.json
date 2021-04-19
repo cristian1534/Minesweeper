@@ -1,0 +1,38 @@
+{
+  "files": {
+    "analytics.js": "/Minesweeper.git.io/static/js/analytics.3187288b.chunk.js",
+    "analytics.js.map": "/Minesweeper.git.io/static/js/analytics.3187288b.chunk.js.map",
+    "database.js": "/Minesweeper.git.io/static/js/database.dce66f94.chunk.js",
+    "database.js.map": "/Minesweeper.git.io/static/js/database.dce66f94.chunk.js.map",
+    "firestore.js": "/Minesweeper.git.io/static/js/firestore.17d83b1d.chunk.js",
+    "firestore.js.map": "/Minesweeper.git.io/static/js/firestore.17d83b1d.chunk.js.map",
+    "functions.js": "/Minesweeper.git.io/static/js/functions.7f83e040.chunk.js",
+    "functions.js.map": "/Minesweeper.git.io/static/js/functions.7f83e040.chunk.js.map",
+    "main.css": "/Minesweeper.git.io/static/css/main.b3307f22.chunk.css",
+    "main.js": "/Minesweeper.git.io/static/js/main.cecb145a.chunk.js",
+    "main.js.map": "/Minesweeper.git.io/static/js/main.cecb145a.chunk.js.map",
+    "messaging.js": "/Minesweeper.git.io/static/js/messaging.ea0b7d33.chunk.js",
+    "messaging.js.map": "/Minesweeper.git.io/static/js/messaging.ea0b7d33.chunk.js.map",
+    "performance.js": "/Minesweeper.git.io/static/js/performance.79b0fbc9.chunk.js",
+    "performance.js.map": "/Minesweeper.git.io/static/js/performance.79b0fbc9.chunk.js.map",
+    "remoteConfig.js": "/Minesweeper.git.io/static/js/remoteConfig.619da6e3.chunk.js",
+    "remoteConfig.js.map": "/Minesweeper.git.io/static/js/remoteConfig.619da6e3.chunk.js.map",
+    "runtime-main.js": "/Minesweeper.git.io/static/js/runtime-main.76e51554.js",
+    "runtime-main.js.map": "/Minesweeper.git.io/static/js/runtime-main.76e51554.js.map",
+    "storage.js": "/Minesweeper.git.io/static/js/storage.6ebfcdd8.chunk.js",
+    "storage.js.map": "/Minesweeper.git.io/static/js/storage.6ebfcdd8.chunk.js.map",
+    "static/js/10.b2a237d9.chunk.js": "/Minesweeper.git.io/static/js/10.b2a237d9.chunk.js",
+    "static/js/10.b2a237d9.chunk.js.map": "/Minesweeper.git.io/static/js/10.b2a237d9.chunk.js.map",
+    "static/js/11.ef0dc215.chunk.js": "/Minesweeper.git.io/static/js/11.ef0dc215.chunk.js",
+    "static/js/11.ef0dc215.chunk.js.map": "/Minesweeper.git.io/static/js/11.ef0dc215.chunk.js.map",
+    "index.html": "/Minesweeper.git.io/index.html",
+    "static/css/main.b3307f22.chunk.css.map": "/Minesweeper.git.io/static/css/main.b3307f22.chunk.css.map",
+    "static/js/10.b2a237d9.chunk.js.LICENSE.txt": "/Minesweeper.git.io/static/js/10.b2a237d9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.76e51554.js",
+    "static/js/10.b2a237d9.chunk.js",
+    "static/css/main.b3307f22.chunk.css",
+    "static/js/main.cecb145a.chunk.js"
+  ]
+}
