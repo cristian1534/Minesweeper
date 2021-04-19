@@ -5,6 +5,7 @@ import { revealed } from "../utils/reveal";
 import Modal from "./Modal";
 import Timer from "./Timer";
 
+
 const Board = () => {
   const [grid, setGrid] = useState([]);
   const [nonMineCount, setNonMineCount] = useState(0);
@@ -75,6 +76,7 @@ const Board = () => {
           alignItems: "center",
           position: "relative",
         }}
+        className="main"
       >
         {gameOver && <Modal restartGame={restartGame} />}
         {grid.map((singleRow, index1) => {

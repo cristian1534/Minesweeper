@@ -3,6 +3,8 @@ import Board from '../components/Board';
 import Header from '../components/Header';
 import Comment from '../components/Comments';
 import Footer from '../components/Footer';
+import './css/Home.css';
+
 
 const Home = () => {
 
@@ -14,7 +16,7 @@ const Home = () => {
     return (
        <div>
            <Header />
-           <div style= { styles.main }>
+           <div style= { styles.main } className="main">
                 <Board />
                 <Comment />
            </div>
