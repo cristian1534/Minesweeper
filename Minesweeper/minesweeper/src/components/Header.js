@@ -1,9 +1,23 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { firebaseApp } from '../db/firebase-config';
+import { useHistory } from "react-router";
+import 'firebase/auth';
 
 
 
 const Header = () => {
+
+
+    const firebase = firebaseApp;
+    const history = useHistory();
+
+    const handleLogout = () => {
+        firebase.auth().signOut()
+        history.push('/')       
+    }
+
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light main">
@@ -22,7 +36,9 @@ const Header = () => {
                     <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
                         <Link to="/">
-                            <button  className="btn btn-primary mt-2" >Logout</button>
+                            <button  
+                            onClick={ handleLogout }
+                            className="btn btn-primary mt-2" >Logout</button>
                         </Link >
                     </li>
                     </ul>
