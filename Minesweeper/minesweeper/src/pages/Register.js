@@ -32,7 +32,7 @@ export default function Register( props ) {
   return (
     <div className="container">
         <div className="rows">
-        <h1 className='container'>Minesweeper Fun!</h1>
+        <h1 className='container title'>Minesweeper Fun!</h1>
         <svg xmlns="http://www.w3.org/2000/svg" 
         width="56" 
         height="56" 

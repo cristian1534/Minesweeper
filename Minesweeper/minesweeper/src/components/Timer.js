@@ -15,7 +15,7 @@ export default function Timer({ gameOver, sendTime }) {
 
   console.log(timeIntervalId);
   return (
-    <div style={{ color: "white", fontSize: 20, background: "blue" }}>
+    <div style={{ color: "white", fontSize: 20, background: "blue", marginBottom:"10px" }}>
       <span role="img" aria-label="clock" style={{ paddingRight: 10 }}>
         ⏰
       </span>

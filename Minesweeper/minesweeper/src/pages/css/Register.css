@@ -19,3 +19,10 @@
 	height:auto;
 	box-shadow: 10px 5px 5px rgb(216, 230, 233);
 }
+
+@media only screen and (max-width: 500px) {
+	.title {
+        font-size: 20px;
+ }	  
+}
+    

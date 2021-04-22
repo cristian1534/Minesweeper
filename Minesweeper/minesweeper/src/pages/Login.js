@@ -3,7 +3,7 @@ import { firebaseApp } from '../db/firebase-config';
 import { useHistory } from "react-router";
 import swal from 'sweetalert';
 import 'firebase/auth';
-import './css/Register.css';
+import './css/Login.css';
 
 
 
@@ -41,7 +41,7 @@ export default function Login( props ) {
   return (
     <div className="container">
         <div className="rows">
-        <h1 className='container'>Minesweeper Fun!</h1>
+        <h1 className='container title'>Minesweeper Fun!</h1>
         <svg xmlns="http://www.w3.org/2000/svg" 
         width="56" 
         height="56" 

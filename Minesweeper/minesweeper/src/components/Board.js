@@ -21,10 +21,12 @@ const Board = () => {
   }, []);
 
   const freshBoard = () => {
-    const newBoard = createBoard(10, 15, 15);
+
+    const newBoard3 = createBoard(10, 6, 15);
     setNonMineCount(10 * 15 - 15);
-    setMineLocations(newBoard.mineLocation);
-    setGrid(newBoard.board);
+    setMineLocations(newBoard3.mineLocation);
+    setGrid(newBoard3.board);
+
   };
 
   const restartGame = () => {
