@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
+import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
           <Switch>
             <Route exact path="/" component={ Register } />
             <Route  path="/login" component={ Login } />
-            <Route  path="/Home" component={ Home } />
+            <Route  path="/home" component={ Home } />
             <Route  path="/api/admin" component={ Admin } />
+            <Route  path="" component={ NotFound} />
           </Switch>
         </Router>
       </header>

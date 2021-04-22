@@ -8,8 +8,6 @@ const Comments = () => {
     const [ comment, setComment ] = useState("");
 
 
-    const form = document.getElementById('form')
-
     const handleSubmit = (e) => {
         e.preventDefault();
         db.collection('Comments').add({
@@ -20,14 +18,17 @@ const Comments = () => {
             swal({
                 title:"Comment sent successfully!",
                 text:"Your comment helps me to improve myself.",
-                icon:"success",
+                icon:"success", 
+             })    
+             setEmail("")
+             setComment("")
              
-             })
-             form.reset()
         })
+     
         .catch((err) => {
             alert(err.message)        
         })
+       
 
     }
  
